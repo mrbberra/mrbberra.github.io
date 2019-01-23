@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Staatliches');
+.Section {
+  text-align: center;
+  color: #274e54;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+}
+.h1 {
+  font-family: 'Staatliches', cursive;
+}
+.p {
+  font-family: 'Roboto', sans-serif;
+}
+#main {
+  background: #ecbeb4;
+}
+#avocados {
+  background: #519e8a;
+}
+#this {
+  background: #c5c9a4;
+}
+#contact {
+  background: #8bba7c;
+}

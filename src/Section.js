@@ -7,31 +7,27 @@ class Section extends Component {
     children: PropTypes.instanceOf(Object).isRequired,
     title: PropTypes.string.isRequired,
     isOpen: PropTypes.bool.isRequired,
-    isMainHeder: PropTypes.bool.isRequired,
     id: PropTypes.string.isRequired,
-    //toggleOpen: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
   };
 
   constructor(props) {
     super(props);
     this.state = { isOpen: this.props.isOpen };
-    this.toggleOpen = this.toggleOpen.bind(this);
   }
 
-  toggleOpen() {
-    console.log('toggling')
-    this.setState(prevState => ({
-      isOpen: !prevState.isOpen
-    }));
-  }
+  // toggleOpen() {
+  //   console.log('toggling')
+  //   this.setState(prevState => ({
+  //     isOpen: !prevState.isOpen
+  //   }));
+  // }
 
   render() {
-    let contents;
-    this.state.isOpen ? contents = this.props.children : contents = null;
     return (
       <div className='Section' id={this.props.id}>
-        <h1><a onClick={this.toggleOpen}>{ this.props.title }</a></h1>
-        { contents }
+        <h1 onClick={() => this.props.onClick(this.props.title)}>{ this.props.title }</h1>
+        { this.props.children }
       </div>
     );
   }

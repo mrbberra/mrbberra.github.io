@@ -8,14 +8,18 @@
   margin-right: 20px;
   padding: 5px;
 }
-.h1 {
+h1 {
   font-family: 'Staatliches', cursive;
+  cursor: pointer;
 }
-.p {
+p {
   font-family: 'Roboto', sans-serif;
 }
 #main {
   background: #ecbeb4;
+}
+#main h1 {
+  font-size: 5em;
 }
 #avocados {
   background: #519e8a;

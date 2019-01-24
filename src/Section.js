@@ -4,7 +4,7 @@ import './Section.css';
 
 class Section extends Component {
   static propTypes = {
-    children: PropTypes.instanceOf(Object).isRequired,
+    children: PropTypes.instanceOf(Object),
     title: PropTypes.string.isRequired,
     isOpen: PropTypes.bool.isRequired,
     id: PropTypes.string.isRequired,
@@ -13,7 +13,9 @@ class Section extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { isOpen: this.props.isOpen };
+    this.state = {
+      isOpen: this.props.isOpen,
+    };
   }
 
   // toggleOpen() {

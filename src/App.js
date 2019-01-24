@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Section from './Section';
 import SectionList from './SectionList';
 
 class App extends Component {
@@ -18,7 +17,7 @@ class App extends Component {
             <p>I made it</p>
           </div>
           <div title='Contact' isOpen={false} id='contact'>
-            <p>@ me next time</p>
+            <p>@me next time<br/>moses.r.berra@gmail.com</p>
           </div>
         </SectionList>
       </div>

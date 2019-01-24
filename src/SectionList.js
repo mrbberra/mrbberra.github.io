@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Section from './Section';
+import {Collapse} from 'react-collapse';
 
 class SectionList extends Component {
   static propTypes = {
@@ -27,13 +28,27 @@ class SectionList extends Component {
   }
 
   toggle = title => {
-    this.closeSection(this.state.openSection);
-    this.props.children.forEach(child => {
-      if(child.props.title === title) {
-        this.expandSection(child);
-        this.setState({ openSection:child });
-      }
-    });
+    if (this.state.openSection === null) { // no sections are currently open, just open this one
+      this.props.children.forEach(child => {
+        if(child.props.title === title) {
+          this.expandSection(child);
+          this.setState({ openSection:child });
+        }
+      });
+    }
+    else if (title === this.state.openSection.props.title) { // closing the open section only
+      this.closeSection(this.state.openSection);
+      this.setState({ openSection:null });
+    }
+    else { // opening a new section and closing the old one
+      this.closeSection(this.state.openSection);
+      this.props.children.forEach(child => {
+        if(child.props.title === title) {
+          this.expandSection(child);
+          this.setState({ openSection:child });
+        }
+      });
+    }
   }
 
   render() {
@@ -45,7 +60,9 @@ class SectionList extends Component {
           onClick={this.toggle}
           id={child.props.id}
         >
-        {child === this.state.openSection ? child.props.children : null}
+          <Collapse isOpened={child === this.state.openSection ? true : false}>
+            { child.props.children }
+          </Collapse>
         </Section>
       ))
     );

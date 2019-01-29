@@ -47,7 +47,7 @@ class App extends Component {
               <a href='https://medium.com/in-the-weeds/learning-react-with-create-react-app-part-2-3ad99f38b48d'>resources</a>.
             </p>
             <p>
-              The source code can be found <a href='https://github.com/mrbberra/website'>here</a>
+              The source code can be found <a href='https://github.com/mrbberra/website'>here</a>.
             </p>
             <p>
               I learned a lot from this site, as it was my first experience working with
@@ -59,11 +59,12 @@ class App extends Component {
               Component so that only one section could be open at once. Finally, I was able to add animations.
             </p>
             <p>
-              Again, as this is my first React project, and will always be somewhat of a work in progress. Any feedback is appreciated!
+              Again, as this is my first React project, it will always be somewhat of a work in progress. Any feedback is appreciated!
             </p>
           </div>
-          <div title='Contact' isOpen={false} id='contact'>
-            <p>moses.r.berra@gmail.com</p>
+          <div title='Find Me' isOpen={false} id='contact'>
+            <a id='icon-link' href='https://www.linkedin.com/in/mrbberra/'><i class='fab fa-linkedin' aria-hidden='true'></i></a>
+            <a id='icon-link' href='https://github.com/mrbberra'><i class='fab fa-github' aria-hidden='true'></i></a>
           </div>
         </SectionList>
       </div>

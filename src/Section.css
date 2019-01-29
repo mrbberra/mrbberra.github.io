@@ -2,10 +2,7 @@
 .Section {
   text-align: center;
   color: #1e3d42;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 0 10%;
   padding: 15px;
 }
 h1 {
